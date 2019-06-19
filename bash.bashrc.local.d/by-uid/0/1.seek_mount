@@ -1,0 +1,7 @@
+function seek_mount () {
+    truecrypt -t -k '' --protect-hidden=no --mount /home/home_seeker /home/seeker/
+    su -c "truecrypt -t -k '' --protect-hidden=no                       \
+            --fs-options='uid=seeker,gid=users,fmask=077,gmask=077'     \
+            --mount /dev/sda4 /media/truecrypt20" seeker          
+            mount --bind /media/truecrypt20/lamway/ /home/seeker/Dropbox/shared_with_others/lamway/
+}
